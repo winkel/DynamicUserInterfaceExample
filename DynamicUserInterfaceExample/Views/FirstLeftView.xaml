@@ -7,5 +7,8 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <StackPanel Background="Green">
         <TextBlock>FirstLeftView</TextBlock>
+        <Button Command="{Binding AlphaCommand}" Margin="30">Alpha</Button>
+        <Button Command="{Binding BetaCommand}" Margin="30">Beta</Button>
+        <Button Command="{Binding GammaCommand}" Margin="30">Gamma</Button>
     </StackPanel>
 </UserControl>

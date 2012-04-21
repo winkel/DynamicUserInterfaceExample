@@ -50,6 +50,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\FirstModel.cs" />
     <Compile Include="Views\ThirdRightView.xaml.cs">
       <DependentUpon>ThirdRightView.xaml</DependentUpon>
     </Compile>

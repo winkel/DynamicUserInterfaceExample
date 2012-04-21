@@ -5,12 +5,18 @@ using System.Text;
 using System.ComponentModel;
 using System.Windows.Input;
 using DynamicUserInterfaceExample.Common;
+using DynamicUserInterfaceExample.Model;
 
 namespace DynamicUserInterfaceExample.ViewModels
 {
     public class MainVindowViewModel : INotifyPropertyChanged
     {
-        private object _leftPanel = new FirstLeftViewModel();
+        public MainVindowViewModel()
+        {
+            OnFirstOption();
+        }
+
+        private object _leftPanel = null;
         public object LeftPanel
         {
             get { return _leftPanel; }
@@ -21,7 +27,7 @@ namespace DynamicUserInterfaceExample.ViewModels
             }
         }
 
-        private object _rightPanel = new FirstRightViewModel();
+        private object _rightPanel = null;
         public object RightPanel
         {
             get { return _rightPanel; }
@@ -45,8 +51,9 @@ namespace DynamicUserInterfaceExample.ViewModels
 
         public void OnFirstOption()
         {
-            this.LeftPanel = new FirstLeftViewModel();
-            this.RightPanel = new FirstRightViewModel();
+            var model = new FirstModel();
+            this.LeftPanel = new FirstLeftViewModel(model);
+            this.RightPanel = new FirstRightViewModel(model);
         }
 
         ICommand _secondOptionCommand = null;
